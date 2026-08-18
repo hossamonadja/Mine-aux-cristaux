@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mine aux cristaux</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="module" src="js/main.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <h1>Mine aux cristaux</h1>
+
+        <!-- Barre d'énergie pioche & Score -->
+        <div class="header-stats">
+            <div class="pickaxe-container">
+                <img src="images/icone_pioche.png" alt="Pioche" class="icon">
+                <div class="energy-bar-outer">
+                    <div id="energyBarInner" class="energy-bar-inner"></div>
+                    <span id="energyText" class="energy-text">40/40</span>
+                </div>
+            </div>
+            <div class="score-container">
+                <span id="scoreText" class="score-text">0</span>
+                <img src="images/icone_cristal.png" alt="Cristal" class="icon">
+            </div>
+        </div>
+
+        <!-- Grille du jeu -->
+        <div id="gridContainer" class="grid-container"></div>
+
+        <!-- Contrôles du joueur -->
+        <div class="controls-container">
+            <div class="d-pad">
+                <button id="btnUp" class="btn-control">↑</button>
+                <div class="d-pad-horizontal">
+                    <button id="btnLeft" class="btn-control">←</button>
+                    <button id="btnDown" class="btn-control">↓</button>
+                    <button id="btnRight" class="btn-control">→</button>
+                </div>
+            </div>
+            <button id="btnQuit" class="btn-quit">Quitter</button>
+        </div>
+    </div>
+
+    <!-- Fin de partie -->
+    <div id="modalGameOver" class="modal hidden">
+        <div class="modal-content">
+            <h2>Game Over</h2>
+            <p>Cristaux récoltés : <span id="finalScore">0</span></p>
+            <button id="btnRestart" class="btn-restart">Nouvelle partie</button>
+        </div>
+    </div>
+</body>
+</html>

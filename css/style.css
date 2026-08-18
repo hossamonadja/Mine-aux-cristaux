@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 800px;
+}
+
+.pickaxe-container, .score-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.energy-bar-outer {
+    position: relative;
+    width: 250px;
+    height: 30px;
+    background-color: #777;
+    border: 2px solid #000;
+}
+
+.energy-bar-inner {
+    width: 100%;
+    height: 100%;
+    background-color: #00b300;
+    transition: width 0.2s ease, background-color 0.2s ease;
+}
+
+.energy-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: #fff;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.score-text {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(25, 32px);
+    grid-template-rows: repeat(15, 32px);
+    border: 3px solid #333;
+    background-color: #111;
+}
+
+.tile {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    position: relative;
+}
+
+.hero {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background-image: url('/images/hero.png');
+    background-size: cover;
+    z-index: 10;
+}
+
+.controls-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.d-pad {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.d-pad-horizontal {
+    display: flex;
+    gap: 2px;
+}
+
+.btn-control, .btn-quit, .btn-restart {
+    padding: 8px 16px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #777;
+    background-color: #e0e0e0;
+}
+
+.btn-control:hover, .btn-quit:hover, .btn-restart:hover {
+    background-color: #ccc;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
